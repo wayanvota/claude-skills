@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Claude Skills for nonprofit fundraising — Wayan Vota</title>
+  <meta name="description" content="Why these Claude Skills exist, how to use them, and a note on Wayan Vota, the digital development strategist who built them as a proof of concept for AI-assisted fundraising.">
+  <meta name="author" content="Wayan Vota">
+  <link rel="canonical" href="https://wayan.com/claude-skills/about.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="About — Claude Skills for nonprofit fundraising">
+  <meta property="og:description" content="Why these Claude Skills exist, how to use them, and a note on the author.">
+  <meta property="og:url" content="https://wayan.com/claude-skills/about.html">
+  <meta name="theme-color" content="#faf9f6">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand-block">
+        <a href="index.html" class="brand">Wayan Vota</a>
+        <p class="positioning">Digital development strategist focused on practical technology adoption and responsible AI uses by mission-driven organizations.</p>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Skills</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="about">
+      <div class="container">
+        <p class="kicker">About</p>
+        <h1>Why these skills exist, and how to use them.</h1>
+
+        <h2>The problem</h2>
+        <p>Your development team is leaking time at three predictable points, and AI hasn't fixed any of them. The first leak is funder discovery, where a senior person spends a week scanning the field and produces a prioritization that's mostly already in their head. The second is drafting, where a program officer writes a proposal that ignores what the funder said it wanted because nobody read the <a href="https://www.grants.gov/" rel="noopener">RFP</a> closely enough. The third is the credibility check before submission, which usually means one tired person reading at 11 pm.</p>
+
+        <p>Generic AI tools make all three worse. Claude with no scaffolding will draft a proposal that sounds polished and proposes the wrong thing. ChatGPT will invent a statistic that survives until a program officer Googles it. The "AI for nonprofits" course your peer ED took last quarter taught prompt tricks that don't compound across sessions.</p>
+
+        <h2>What a skill is</h2>
+        <p>A skill is a folder of instructions Claude loads on demand, encoding how a specific task should be done. The six in this set, three for the workflow (prospect research, application drafter, compliance check), two for funder voice (<a href="https://gcgh.grandchallenges.org/" rel="noopener">Gates Grand Challenges</a>, <a href="https://wellcome.org/research-funding" rel="noopener">Wellcome research</a>), and one for credibility audit, do something a generic AI assistant cannot. They encode the institutional knowledge that disappears when your senior development director retires. The seventh tool, a skill-builder prompt that produces the four supporting files all six lean on, is the prerequisite. Without it the skills run on generic defaults and you get generic output.</p>
+
+        <h2>The case</h2>
+        <p>The case isn't that these skills replace your fundraisers. They don't. The case is that they let your fundraisers do the work only humans can do, building the funder relationship, judging strategic fit, deciding what to invest in, while the skills handle the mechanical layer that consumes most of the week. Prospect research goes from a week to a morning. Drafting a concept note for a familiar funder goes from three days to a draft your program officer edits in two hours. Compliance check before submission goes from a tired late-night read to a structured audit a junior staffer can run.</p>
+
+        <p>What you're buying is institutional consistency. Right now, the quality of a Hewlett LOI from your shop depends on which fundraiser drafted it. With these skills installed and customized to your org, the floor rises. The ceiling is still your senior people. The floor is what kills development shops, the proposals that go out below the bar because the right person was on vacation. Skills raise the floor.</p>
+
+        <h2>How to use them</h2>
+        <p><strong>Build the supporting files first.</strong> The skill-builder prompt asks for your annual report, audited financials, 990 (or the link to it on <a href="https://projects.propublica.org/nonprofits/" rel="noopener">ProPublica</a>), strategic plan, and any external evaluations from the last three years. The whole thing takes 20 to 45 minutes. The output is four files (<code>org-profile.md</code>, <code>funder-relationships.csv</code>, <code>house-style.md</code>, <code>program-evidence.md</code>) you save to your <a href="https://support.claude.com/en/articles/13345190-getting-started-with-cowork" rel="noopener">Cowork</a> workspace or shared drive. The non-negotiable rule the prompt enforces, and that you should enforce on yourself, is no fabrication. If a document doesn't say something and you don't know the answer, the file gets a <code>[CONFIRM]</code> flag rather than a guess.</p>
+
+        <h3 id="install">Install the skills</h3>
+        <p>Each skill is a single SKILL.md file with YAML frontmatter at the top. Claude loads it on demand when the trigger conditions match what you ask. To make all seven available in <a href="https://support.claude.com/en/articles/13345190-getting-started-with-cowork" rel="noopener">Cowork</a>:</p>
+        <ol class="install-steps">
+          <li><strong>Download.</strong> Grab <a href="claude-skills.zip" download>claude-skills.zip</a> from the index. Unzip the file. You should see seven .md files plus the long-form argument piece.</li>
+          <li><strong>Open Cowork.</strong> In the Claude desktop app, switch to Cowork mode. Click <strong>Customize</strong> in the left sidebar, then click the <strong>+</strong> button to open the directory.</li>
+          <li><strong>Add each skill.</strong> Open the <strong>Skills</strong> tab and upload the .md files one at a time. Cowork will parse the frontmatter and show you the trigger description for each.</li>
+          <li><strong>Verify.</strong> Start a new Cowork session and ask Claude something the skill should trigger on, for example, "find grants for our youth program." Claude should announce it's loading <code>grant-prospect-research</code> before it answers.</li>
+        </ol>
+        <p>Anthropic's canonical reference is <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude" rel="noopener">Use Skills in Claude</a>. If you're on Claude.ai instead of Cowork, the install path is <strong>Customize → Skills</strong>. If you're on Claude Code, drop the .md files into <code>~/.claude/skills/</code> and start a new session.</p>
+        <p>Before you point a skill at a real funder or real draft, test it on fake data. The first run will reveal what doesn't fit your context, which is the input to customization.</p>
+
+        <p><strong>Customize.</strong> The skills as delivered are scaffolding. The funder lists in prospect research need to match where your money actually comes from. Drop the bilateral block if you don't operate internationally. Drop the foundation block if you only do federal. The compliance check eligibility list needs your federal registrations, audit status, fiscal sponsor relationship, and any funder-specific compliance items your largest funders require.</p>
+
+        <p><strong>Run.</strong> Run them in the sequence appropriate to the work, with humans between each stage. The grant workflow is three skills run sequentially with the user choosing what to advance. The funder voice skills slot inside the drafter. The credibility audit runs across everything. The skills don't replace judgment. They make judgment cheaper to deploy.</p>
+
+        <p>For the longer argument, including which shops should run the full stack and which should run a subset, read <a href="seven-tools-why-when-how.md">Seven tools for NGO fundraising: why, when, how</a>.</p>
+
+        <h2>About the author</h2>
+        <p>Wayan Vota is a digital development strategist who focuses on practical technology adoption and responsible AI uses by mission-driven organizations.</p>
+
+        <p>Wayan is not a software engineer. He cannot code his way out of a paper bag. This site and the skills it showcases were vibe coded using Claude Cowork. He built them as a proof of concept to show how AI can improve fundraising without replacing human judgment.</p>
+
+        <p>This is a personal passion project. That doesn't reduce his enthusiasm. It makes him fearless.</p>
+
+        <p class="about-back"><a href="index.html">Back to the skills</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>By <a href="about.html">Wayan Vota</a>. Built with Claude Cowork.</p>
+      <p><a href="index.html">All skills</a></p>
+    </div>
+  </footer>
+</body>
+</html>

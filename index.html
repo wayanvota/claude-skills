@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Skills for nonprofit fundraising — Wayan Vota</title>
+  <meta name="description" content="Seven Claude Skills for nonprofit fundraising: prospect research, application drafting, compliance check, funder voice for Gates and Wellcome, credibility audit, and the skill-builder prompt that produces the supporting files the others lean on.">
+  <meta name="author" content="Wayan Vota">
+  <link rel="canonical" href="https://wayan.com/claude-skills/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Claude Skills for nonprofit fundraising">
+  <meta property="og:description" content="Seven Claude Skills built to encode the institutional knowledge that disappears when your senior development director retires.">
+  <meta property="og:url" content="https://wayan.com/claude-skills/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#faf9f6">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand-block">
+        <a href="index.html" class="brand">Wayan Vota</a>
+        <p class="positioning">Digital development strategist focused on practical technology adoption and responsible AI uses by mission-driven organizations.</p>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="kicker">Claude Skills · Nonprofit fundraising</p>
+        <h1 id="page-title">Seven skills for nonprofit fundraising.</h1>
+        <p class="lede">Your development team is leaking time at three predictable points: funder discovery, drafting against unread RFPs, and 11 pm credibility checks. Generic Claude makes all three worse, producing polished proposals that say the wrong thing and statistics that don't survive a Google search. These seven skills are the scaffolding that fixes that, encoding the institutional knowledge that disappears when your senior development director retires.</p>
+      </div>
+    </section>
+
+    <section class="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading" class="skills-heading">The Skills</h2>
+        <ol class="skill-grid">
+
+          <li>
+            <article class="skill-card">
+              <div class="meta">
+                <span class="num" aria-hidden="true"></span>
+                <span class="frame">Why · Prerequisite</span>
+              </div>
+              <h2>Skill-builder prompt</h2>
+              <p>Run this once before any of the other six. It extracts what your annual report, audited financials, 990, and past winning proposals already say, then asks focused questions only for the gaps. The output is four files (org-profile, funder-relationships, house-style, program-evidence) the other skills lean on. Skipping this means generic output.</p>
+              <a class="skill-link" href="skill-file-builder-prompt.md">Open the prompt</a>
+            </article>
+          </li>
+
+          <li>
+            <article class="skill-card">
+              <div class="meta">
+                <span class="num" aria-hidden="true"></span>
+                <span class="frame">When · Start of grant cycle</span>
+              </div>
+              <h2>Grant prospect research</h2>
+              <p>Run quarterly for a midsize shop, monthly for a heavy institutional fundraiser. The skill produces a prioritization report your development director reads in twenty minutes, with a single recommendation rather than three options to pick from. It does not draft applications. Drafting is a separate skill, invoked after a human has chosen which funders are worth the effort.</p>
+              <a class="skill-link" href="grant-prospect-research.md">Open the skill</a>
+            </article>
+          </li>
+
+          <li>
+            <article class="skill-card">
+              <div class="meta">
+                <span class="num" aria-hidden="true"></span>
+                <span class="frame">When · After funder selection</span>
+              </div>
+              <h2>Grant application drafter</h2>
+              <p>Runs after a human has decided which funders to apply to. Produces a draft in the format the funder requires (LOI, concept note, or full proposal) with every gap clearly marked for program staff and finance to fill. It does not invent voice or numbers. If house-style or program-evidence files are missing, it flags every place they would have changed the output.</p>
+              <a class="skill-link" href="grant-application-drafter.md">Open the skill</a>
+            </article>
+          </li>
+
+          <li>
+            <article class="skill-card">
+              <div class="meta">
+                <span class="num" aria-hidden="true"></span>
+                <span class="frame">Why · The open door at Gates</span>
+              </div>
+              <h2>Gates Grand Challenges voice</h2>
+              <p>Most Gates Foundation funding is invitation-only. Grand Challenges is the open door, and it has unusually specific rules that don't generalize to other Gates programs. The skill produces a two-page proposal in the format Grand Challenges actually evaluates against, against a specific round and challenge. Conservative, incremental work loses against bold work even when the bold work is riskier.</p>
+              <a class="skill-link" href="gates-grand-challenges-voice.md">Open the skill</a>
+            </article>
+          </li>
+
+          <li>
+            <article class="skill-card">
+              <div class="meta">
+                <span class="num" aria-hidden="true"></span>
+                <span class="frame">Why · Eligibility check first</span>
+              </div>
+              <h2>Wellcome research voice</h2>
+              <p>Wellcome funds individual researchers at eligible institutions, not nonprofit programs. The skill runs an eligibility check first and stops if the lead applicant isn't a researcher at a UK, Republic of Ireland, or low- or middle-income country institution. For eligible applicants, it produces draft sections in the format Wellcome's online platform requires, against the specific scheme.</p>
+              <a class="skill-link" href="wellcome-research-voice.md">Open the skill</a>
+            </article>
+          </li>
+
+          <li>
+            <article class="skill-card">
+              <div class="meta">
+                <span class="num" aria-hidden="true"></span>
+                <span class="frame">When · Day before submission</span>
+              </div>
+              <h2>Grant compliance check</h2>
+              <p>Run the day before submission, not the morning of. The skill produces a compliance memo flagging eligibility issues, format violations, internal inconsistencies, and funder-language alignment gaps. A junior staffer can run it. Each item is marked PASS, FAIL, or CANNOT DETERMINE FROM AVAILABLE INFORMATION. The skill does not edit the draft.</p>
+              <a class="skill-link" href="grant-compliance-check.md">Open the skill</a>
+            </article>
+          </li>
+
+          <li>
+            <article class="skill-card">
+              <div class="meta">
+                <span class="num" aria-hidden="true"></span>
+                <span class="frame">Why · The most common avoidable failure</span>
+              </div>
+              <h2>Content credibility audit</h2>
+              <p>The most common avoidable failure in nonprofit publishing is shipping a number, attribution, or causal claim that doesn't survive a basic check. AI drafting makes this worse, not better, because models are confident generators of plausible-sounding statistics. Run on op-eds, donor letters, board memos, and proposals. For high-stakes pieces, run it twice.</p>
+              <a class="skill-link" href="content-credibility-audit.md">Open the skill</a>
+            </article>
+          </li>
+
+        </ol>
+
+        <aside class="download-all" aria-labelledby="download-heading">
+          <p class="kicker" id="download-heading">Get the package</p>
+          <a class="download-link" href="claude-skills.zip" download>Download all seven skills (ZIP)</a>
+          <p class="download-help">First time using a Claude Skill? <a href="about.html#install">Read the install guide</a> before downloading.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>By <a href="about.html">Wayan Vota</a>. Built with Claude Cowork.</p>
+      <p><a href="about.html">About these skills</a></p>
+    </div>
+  </footer>
+</body>
+</html>
