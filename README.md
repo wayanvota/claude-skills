@@ -29,8 +29,9 @@ https://wayan.com/claude-skills/
 
 ## Build And Test
 
-Use Node 22.16.0 or newer. The ZIP builder also requires the standard `zip`
-and `unzip` command-line programs.
+Use Node 22.16.0 or newer. The ZIP builder is implemented in Node so the tracked
+archive is byte-stable on macOS and Linux. The tests use the standard `unzip`
+command-line program to inspect the finished archive.
 
 ```bash
 npm ci

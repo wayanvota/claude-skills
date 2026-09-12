@@ -10,7 +10,7 @@ Environment: macOS, Node 22.16.0
 PASS. All 20 static-site and package categories passed. The npm dependency
 audit reported zero vulnerabilities. Rebuilding `claude-skills.zip` twice
 produced the same SHA-256 digest:
-`9099763329ce5dfbb4ddff40514f36d53601841e02e007c97453733b21b056d3`.
+`d02363272255339ac74defd0b524f12c70de58f285260a6753b5fe1b5ba086f4`.
 
 Before this change, the public pages linked to `claude-skills.zip`, but the
 repository ignored ZIP files and did not contain the download. There was no
@@ -53,12 +53,20 @@ browser, network service, model, or credential is required.
 | A09 | Give skills usable descriptions with no placeholders | PASS |
 | A10 | Match every ZIP entry to its source byte-for-byte | PASS |
 
-## Failure found and fixed
+## Failures found and fixed
 
 The public download target did not exist in GitHub and was explicitly ignored
 by `.gitignore`. The new deterministic builder stages the eight published files
 with a fixed timestamp, strips host-specific ZIP metadata, and writes the
 tracked archive. CI rebuilds it and rejects stale package contents.
+
+The first pull-request run then exposed an operating-system portability defect:
+the host `zip` implementations produced different compressed bytes on macOS and
+GitHub's Linux runner even with matching timestamps and stripped metadata. The
+builder now writes the ZIP container directly with fixed headers, file order,
+permissions, timestamps, and the uncompressed storage method. This removes the
+host compression implementation from the artifact and preserves byte-for-byte
+package verification in CI.
 
 ## Verification evidence
 
@@ -70,7 +78,7 @@ $ npm audit --audit-level=high
 found 0 vulnerabilities
 
 $ shasum -a 256 claude-skills.zip
-9099763329ce5dfbb4ddff40514f36d53601841e02e007c97453733b21b056d3
+d02363272255339ac74defd0b524f12c70de58f285260a6753b5fe1b5ba086f4
 ```
 
 ## Known boundary
