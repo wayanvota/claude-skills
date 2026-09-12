@@ -1,0 +1,14 @@
+{
+  "name": "claude-skills-static-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:package": "node scripts/build-package.mjs",
+    "test": "npm run build:package && node --test --test-concurrency=1 tests/e2e.test.mjs",
+    "test:ci": "npm run build:package && git diff --exit-code -- claude-skills.zip && node --test --test-concurrency=1 tests/e2e.test.mjs"
+  },
+  "engines": {
+    "node": ">=22.16.0"
+  }
+}
